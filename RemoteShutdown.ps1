@@ -23,7 +23,6 @@ $sessionListCSV | ForEach-Object{
     $arrayIPs += $_.IP
     $arrayUsers += $_.User
     $arrayPWs += $_.PW
-    $arrayFolders += $_.Folder
 }
 
 $num = $arrayIPs.length

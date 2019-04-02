@@ -1,7 +1,4 @@
-IP,User,PW,Folder,MAC
-192.168.1.101,PS_1,password,ps_1_共有,70-85-C2-AB-42-B7
-192.168.1.102,PS_2,password,ps_2_共有,70-85-C2-AB-41-D7
-192.168.1.103,PS_3,password,ps_3_共有,70-85-C2-AB-43-23
-192.168.1.104,PS_4,password,ps_4_共有,70-85-C2-AB-41-D3
-192.168.1.105,PS_5,password,ps_5_共有,70-85-C2-AB-41-D5
-192.168.1.106,PS_6,password,ps_6_共有,70-85-C2-AB-41-E1
+IP,User,PW,MAC
+192.168.1.101,Test_0,password,70-85-C2-AB-42-B7
+192.168.1.102,Test_1,password,70-85-C2-AB-41-D7
+
