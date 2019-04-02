@@ -1,4 +1,4 @@
-﻿ Write-Output "WakeUp";
+﻿ Write-Output "Remote WakeUp";
 # mv Current
 $currentPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $currentPath
@@ -39,7 +39,6 @@ $sessionListCSV | ForEach-Object{
     $arrayIPs += $_.IP
     $arrayUsers += $_.User
     $arrayPWs += $_.PW
-    $arrayFolders += $_.Folder
     $arrayMACs += $_.MAC 
 }
 
