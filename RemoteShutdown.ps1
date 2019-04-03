@@ -41,4 +41,8 @@ for($i = 0; $i -lt $num; $i++){
 }
 Write-Host "3秒後にシャットダウンします"
 
+# セッション終了
+$endSessionPath = $currentPath + "\\EndSession.ps1"
+powershell $endSessionPath
+
 
