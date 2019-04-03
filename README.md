@@ -29,6 +29,41 @@ IP,User,PW,MAC
 
 ps1ファイルを右クリック > PowerShellで実行
 
+<details><summary> コマンドから実行する（実行権限なし）</summary><div>
+
+管理者権限でExecutionPolicyを変更できない場合
+
+``` 
+powershell -ExecutionPolicy RemoteSigned -File RemoteWakeUp.ps1
+```
+
+</div></details>
+
+<details><summary> コマンドから実行する（実行権限あり）</summary><div>
+
+
+``` 
+powershell -File RemoteWakeUp.ps1
+```
+
+</div></details>
+
+<details><summary> ショートカットを作成する</summary><div>
+
+(1) ps1ファイルを右クリックしてショートカットを作成する
+
+(2) ショートカットを右クリックしてプロパティを開く
+
+(3) リンク先(T):を変更する
+
+``` 
+powershell -ExecutionPolicy RemoteSigned -File [path]
+```
+
+※[path]にはps1ファイルのpathを入力する
+
+</div></details>
+
 ## Settings
 
 <details><summary>シャットダウン設定</summary><div>
@@ -53,7 +88,9 @@ ps1ファイルを右クリック > PowerShellで実行
 (3) BIOSからWOL,PCIE DeviceをEnable
 
 (4) デバイスマネージャー>LANアダプター>詳細設定>プロパティ>Wake On Magic PaketをON
+
 ・Wake On Magic Paket = ON
+
 ・Energy Efficient Ethernet = OFF
 
 (5) デバイスマネージャー>LANアダプター>電源管理> すべてチェック
@@ -68,7 +105,21 @@ ps1ファイルを右クリック > PowerShellで実行
  必ず電源喪失状態からWOLのテストをする事。電源獲得→正常終了→WOLは成功するが、電源喪失からのWOLは成功しない場合がある。この場合、LANアダプターの省エネ設定や電源獲得時の自動起動設定で解消できる。
 
 [補足]  
- 特定のIPにマジックパケットを投げる場合、ルーターのARPテーブルに存在していないIPは消去される。これを防止するためにはARPバインディングが必要となる（※もしくは特定のIPに投げるのを諦めてネットワーク上のすべてのPCにブロードキャストする）。テストした時は問題なくWOLできたいのに、長時間経った後でWOLに失敗する原因はARPテーブルの消去にある。
+ 特定のIPにマジックパケットを投げる場合、ルーターのARPテーブルに存在していないIPは消去される。これを防止するためにはARPバインディングが必要となる（※もしくは特定のIPに投げるのを諦めてネットワーク上のすべてのPCにブロードキャストする）。テストした時は問題なくWOLできたのに、長時間経った後でWOLに失敗する原因はARPテーブルの消去にある。
 
+
+</div></details>
+
+<details><summary>実行権限を与える</summary><div>
+
+(1) powershellを管理者として実行する  
+
+(2) RemoteSignedをSetする
+
+``` 
+Set-ExecutionPolicy RemoteSigned
+```
+
+(3) yを入力してEnter
 
 </div></details>

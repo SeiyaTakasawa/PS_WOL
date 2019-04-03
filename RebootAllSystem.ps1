@@ -1,6 +1,4 @@
-﻿Write-Host "セッション中のPCをシャットダウンします。その後に自分を終了させます"
-
-# Current移動
+﻿# Current移動
 $currentPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $currentPath
 
